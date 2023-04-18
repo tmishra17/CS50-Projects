@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block body %}
+<!-- add some borders/fluff to result screen (style the text for the note, make font bigger,
+    have a white/gray background and put text in it) -->
+    {% for result in results %}
+    <span class="card card-results" style="width: 50rem;">
+        <img class="card-img-top result-images" src="{{ result['imageUrl'] }}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ result['price'] }}
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;{{ result['rating'] }}</h5>
+          <p class="card-text">{{ result['title'] }}</p>
+          <a href="{{ result['detailPageURL'] }}" class="btn btn-primary">View on Amazon</a>
+        </div>
+    </span>
+    <br>
+        <!-- <button type="submit" id="save" name="addToCart"class="btn btn-primary">Add to Cart</button>
+        <input type="hidden" name="productImage" value="{{ result['imageUrl'] }}"/> -->
+    {% endfor %}
+
+
+{% endblock %}

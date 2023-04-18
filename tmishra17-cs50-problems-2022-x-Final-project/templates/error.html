@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block body %}
+<!-- apply same template from results -->
+<form action="/" method="get">
+    <p class="body-text-error">Error {{ errnum }}: {{ message }}</p>
+    <a href="/" class="btn btn-primary button-return">Return to Search</a>
+    <br>
+    <br>
+    <a href="/login" class="btn btn-primary button-return">Return to Login</a>
+    <br>
+    <br>
+    <a href="/register" class="btn btn-primary button-return">Return to Register</a>
+</form>
+{% endblock %}

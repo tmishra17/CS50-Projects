@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <!-- about me should be located in the top left, along with any other sections that should
+    be publicly accessible, put name of program in the top center -->
+
+    <form action="/" method="post" class="index-search">
+        <span class="index-search-menu form-group">
+            <input class="form-control" style="width: 12rem" type="text" autocomplete="off" id="searchbar" name="search" autofocus placeholder="Find a product">
+            &ensp;<select name="country" id="searchbar" class="form-control" style="width: 9rem;">
+            <option disabled selected value="">Country</option>
+            {% for country in countries %}
+                <option value="{{ country }}"> {{ country }}</option>
+            {% endfor %}
+            </select>
+        </span>
+        <button class="btn btn-primary index-search-button" type="submit">Search</button>
+    </form>
+{% endblock %}
+
